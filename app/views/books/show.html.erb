@@ -1,0 +1,25 @@
+<main>
+
+<body>
+  <% if flash[:notice] %>
+   <p id="notice">
+     <%= flash[:notice] %>
+   </p>
+ <% end %>
+<p>
+<strong>Title:</strong>
+<%= f.text_field :title %>
+</p>
+
+<p>
+<strong>Body:</strong>
+<%= f.text_area :body %>
+</p>
+
+<a class="edit_id" href="/books/id/edit">Edit</a> |
+<a class="back" href="/books">Back</a>
+
+
+
+</body>
+</main>
