@@ -26,7 +26,6 @@
 <!--</body>-->
 
 
-<body>
     
  <h1>Editing Book</h1>
     
@@ -49,32 +48,23 @@
       </div>
   <% end %>
 
-<p>
-  <div>
-      <strong>Title</strong>
-  </div>
-  <textarea class="book_title" name="book[title]" id="book_title"><%= @book.title %></textarea>
-  <!--<p><%= @book.title %></p>-->
-</p>
+　<!-- form_with部分 -->
+　<%= form_with model:@book, local:true do |f| %>
 
-<p>
-  <div>
-      <strong>Body</strong>
-  </div>
-  <textarea class="book_body" name="book[body]" id="book_body"><%= @book.body %></textarea>
-  <!--<p><%= @book.body %></p>-->
-</p>
-<div class="actions">
-    <!--<input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">-->
-    <%= link_to "Update Book",book_path(@book.id) %>
-</div>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+
+  <h4>Body</h4>
+  <%= f.text_area :body %>
+
+  <div><%= f.submit 'Update Book' %></div>
+
+　<% end %>
 
 <!--<a class="show_7001" href="/books/7001">Show</a> |-->
-<a class="book_id" href="/books/id/edit">
-    <%= link_to "Show",book_path(@book.id) %>
-</a> |
-<a class="back" href="/books">Back</a>
-
-  
-
-</body>
+<!--<a class="book_id" href="/books/id">-->
+<%= link_to "Show",book_path(@book.id) %>
+<!--</a>-->
+|
+<!--<a class="back" href="/books">Back</a>-->
+<%= link_to "Back",books_path %>

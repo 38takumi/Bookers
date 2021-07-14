@@ -17,9 +17,11 @@
 
 
    <!--<a class="edit_id" href="/books/id/edit">Edit</a> |-->
-   <a class="edit_id" href="/books/id/edit">
-       <%= link_to "Edit",edit_book_path(@book.id) %>
-   </a> |
-   <a class="back" href="/books">Back</a>
+   <!--<a class="edit_id" href="/books/id/edit">-->
+   <%= link_to "Edit",edit_book_path(@book.id) %>
+   <!--</a>-->
+   |
+   <!--<a class="back" href="/books">Back</a>-->
+   <%= link_to "Back",books_path %>
  </body>
 </main>
