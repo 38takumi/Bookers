@@ -1,18 +1,10 @@
-<!-- header -->
 <header>
   <h1 class="heading">
-    <!--<a href="index.html">-->
       Books
-    <!--</a>-->
   </h1>
-  <!--<div class="social">-->
-  <!--  <i class="fab fa-facebook-square"></i>-->
-  <!--  <i class="fab fa-twitter-square"></i>-->
-  <!--  <i class="fab fa-instagram"></i>-->
-  <!--</div>-->
+  
 </header>
-<!-- main -->
-<!--Title用-->
+
 <main>
   <table>
     <thead>
@@ -39,7 +31,7 @@
   
 　<!--New book部分-->
 　<h1>New book</h1>
-　<!-- form_with部分 -->
+　<!-- メールはform_withで -->
 　<%= form_with model:@book, local:true do |f| %>
 
   <!--エラー時のメッセージ-->
@@ -56,9 +48,6 @@
 
   <h4>Title</h4>
   <%= f.text_field :title %>
-
-  <!--<h4>カテゴリー</h4>-->
-  <%= f.text_field :category %>
 
   <h4>Body</h4>
   <%= f.text_area :body %>
