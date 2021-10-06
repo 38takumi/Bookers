@@ -28,7 +28,6 @@ class BooksController < ApplicationController
   end
   
   def update
-    # が変更しても更新されない
     @book = Book.find(params[:id])
     if @book.update(book_params)
       flash[:notice] = "Book was successfully created."
@@ -37,7 +36,6 @@ class BooksController < ApplicationController
       @books = Book.all
       render 'edit'
       # redirect_to edit_book_path(book.id)
-      
     end
   end
   
@@ -47,7 +45,6 @@ class BooksController < ApplicationController
     flash[:notice] = "Book was successfully destroyed."
     redirect_to books_path
   end
-  
   
   private
   def book_params
